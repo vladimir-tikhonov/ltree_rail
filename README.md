@@ -1,4 +1,8 @@
 # LtreeRails
+[![Gem Version](https://badge.fury.io/rb/ltree_rails.svg)](http://badge.fury.io/rb/ltree_rails)
+[![Build Status](https://travis-ci.org/vladimir-tikhonov/ltree_rails.svg?branch=master)](https://travis-ci.org/vladimir-tikhonov/ltree_rails)
+[![Dependency Status](https://gemnasium.com/vladimir-tikhonov/ltree_rails.svg)](https://gemnasium.com/vladimir-tikhonov/ltree_rails)
+[![Code Climate](https://codeclimate.com/github/vladimir-tikhonov/ltree_rails/badges/gpa.svg)](https://codeclimate.com/github/vladimir-tikhonov/ltree_rails)
 
 Easily organize your rails models in hierarchical structures with PostgreSQL ltree datatype
 
