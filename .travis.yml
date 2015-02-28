@@ -13,8 +13,14 @@ gemfile:
   - gemfiles/activerecord_4.2.gemfile
   - gemfiles/activerecord_edge.gemfile
 
+addons:
+  postgresql: '9.3'
+
 matrix:
   allow_failures:
     - gemfile: gemfiles/activerecord_edge.gemfile
+
+before_script:
+  - psql -c 'create database ltree_rails_test;' -U postgres
 
 script: 'bundle exec rspec'

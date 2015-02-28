@@ -1,0 +1,5 @@
+adapter: postgresql
+encoding: utf8
+username: postgres
+database: ltree_rails_test
+host: localhost
