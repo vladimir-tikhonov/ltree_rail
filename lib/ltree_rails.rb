@@ -4,5 +4,6 @@ require 'active_support'
 module LtreeRails
   extend ActiveSupport::Autoload
 
+  autoload :Configuration
   autoload :Configurable
 end
