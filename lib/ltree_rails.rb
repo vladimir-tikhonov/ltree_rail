@@ -6,4 +6,8 @@ module LtreeRails
 
   autoload :Configuration
   autoload :Configurable
+
+  eager_autoload do
+    autoload :HasLtree
+  end
 end
