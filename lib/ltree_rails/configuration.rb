@@ -6,7 +6,7 @@ module LtreeRails
       parent_id_column: 'parent_id',
       path_column: 'path',
       label_column: 'parent_id'
-    }
+    }.freeze
 
     CONFIGURABLE_OPTIONS.each do |option, default|
       config_accessor(option) { default }
