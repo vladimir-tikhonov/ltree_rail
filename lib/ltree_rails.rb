@@ -1,5 +1,9 @@
 require 'ltree_rails/version'
+require 'active_support'
 
 module LtreeRails
-  # TODO: some code
+  extend ActiveSupport::Autoload
+
+  autoload :Configuration
+  autoload :Configurable
 end
