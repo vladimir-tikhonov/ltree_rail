@@ -11,5 +11,3 @@ module LtreeRails
     end
   end
 end
-
-ActiveRecord::Base.send(:include, ::LtreeRails::HasLtree)
