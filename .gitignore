@@ -10,3 +10,4 @@
 /tmp/
 .ruby-gemset
 .ruby-version
+gemfiles/*.lock
