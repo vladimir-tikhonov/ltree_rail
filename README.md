@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/vladimir-tikhonov/ltree_rails.svg?branch=master)](https://travis-ci.org/vladimir-tikhonov/ltree_rails)
 [![Dependency Status](https://gemnasium.com/vladimir-tikhonov/ltree_rails.svg)](https://gemnasium.com/vladimir-tikhonov/ltree_rails)
 [![Code Climate](https://codeclimate.com/github/vladimir-tikhonov/ltree_rails/badges/gpa.svg)](https://codeclimate.com/github/vladimir-tikhonov/ltree_rails)
+[![Coverage Status](https://coveralls.io/repos/vladimir-tikhonov/ltree_rails/badge.svg?branch=coveralls-setup)](https://coveralls.io/r/vladimir-tikhonov/ltree_rails?branch=coveralls-setup)
 
 Easily organize your rails models in hierarchical structures with PostgreSQL ltree datatype
 
