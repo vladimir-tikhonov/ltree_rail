@@ -9,7 +9,11 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Vladimir Tikhonov']
   spec.email         = ['vladimir@tikhonov.by']
 
-  spec.summary       = %q{Easily organize your rails models in hierarchical structures with PostgreSQL ltree datatype}
+  spec.summary       = %q{Easily organize your rails models in hierarchical structures with PostgreSQL ltree datatype.}
+  spec.description   = 'This gem is under development, ' +
+                       'please star https://github.com/vladimir-tikhonov/ltree_rails repo ' +
+                       'to receive status updates.'
+  spec.post_install_message = spec.description
   spec.homepage      = 'https://github.com/vladimir-tikhonov/ltree_rail'
   spec.license       = 'MIT'
 
