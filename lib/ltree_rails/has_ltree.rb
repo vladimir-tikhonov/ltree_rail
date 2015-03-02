@@ -15,6 +15,7 @@ module LtreeRails
 
       def include_dependencies
         include ::LtreeRails::Configurable
+        include ::LtreeRails::Model
       end
 
       def check_options!(opt)

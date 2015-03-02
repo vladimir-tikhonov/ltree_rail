@@ -3,9 +3,10 @@ module LtreeRails
     include ActiveSupport::Configurable
 
     CONFIGURABLE_OPTIONS = {
-      parent_id_column: 'parent_id',
-      path_column: 'path',
-      label_column: 'parent_id'
+      parent_column_name: 'parent_id',
+      path_column_name: 'path',
+      label_column_name: 'parent_id',
+      children_dependent: :nullify
     }.freeze
 
     CONFIGURABLE_OPTIONS.each do |option, default|
