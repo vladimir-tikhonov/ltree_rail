@@ -14,6 +14,7 @@ module LtreeRails
       private
 
       def include_dependencies
+        include ::LtreeRails::Support
         include ::LtreeRails::Configurable
         include ::LtreeRails::Model
       end
