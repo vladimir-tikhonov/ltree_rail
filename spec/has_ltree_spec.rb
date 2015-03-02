@@ -9,8 +9,8 @@ describe LtreeRails::HasLtree do
 
   it 'set option value when pass valid option' do
     c = Class.new(ActiveRecord::Base) do
-      has_ltree(parent_id_column: :some_custom_column)
+      has_ltree(parent_column_name: :some_custom_column)
     end
-    expect(c.ltree_config.parent_id_column).to eq(:some_custom_column)
+    expect(c.ltree_config.parent_column_name).to eq(:some_custom_column)
   end
 end

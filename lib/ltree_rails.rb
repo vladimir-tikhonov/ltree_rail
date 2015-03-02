@@ -7,6 +7,8 @@ module LtreeRails
   autoload :HasLtree
   autoload :Configuration
   autoload :Configurable
+  autoload :Model
+  autoload :Support
 end
 
 ActiveSupport.on_load(:active_record) do
