@@ -41,4 +41,19 @@ describe LtreeRails::Model do
       end
     end
   end
+
+  context 'callbacks' do
+    context 'after_save' do
+      it 'assign label_column value if root' do
+        expect(root_category.path).to eq root_category.id.to_s
+      end
+
+      it 'assign correct value if child' do
+        c1 = Category.create!(parent_id: root_category.id)
+        c2 = Category.create!(parent_id: c1.id)
+        expect(c1.path).to eq "#{root_category.id}.#{c1.id}"
+        expect(c2.path).to eq "#{root_category.id}.#{c1.id}.#{c2.id}"
+      end
+    end
+  end
 end

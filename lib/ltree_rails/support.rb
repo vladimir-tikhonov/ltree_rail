@@ -2,15 +2,25 @@ module LtreeRails
   module Support
     extend ActiveSupport::Concern
 
+    COLUMNS_ACCESSIBLE = %w( parent label path )
+
     included do
-      def _ltree_parent_column_value
-        read_attribute(self.class._ltree_parent_column_name)
+      COLUMNS_ACCESSIBLE.each do |c|
+        define_method("_ltree_#{c}_column_value") do
+          read_attribute(self.class.ltree_config["#{c}_column_name"])
+        end
+
+        define_method("_ltree_#{c}_column_value=") do |value|
+          write_attribute(self.class.ltree_config["#{c}_column_name"], value)
+        end
       end
     end
 
     module ClassMethods
-      def _ltree_parent_column_name
-        ltree_config.parent_column_name.to_s
+      COLUMNS_ACCESSIBLE.each do |c|
+        define_method("_ltree_#{c}_column_name") do
+          ltree_config["#{c}_column_name"].to_s
+        end
       end
     end
   end
