@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Vladimir Tikhonov']
   spec.email         = ['vladimir@tikhonov.by']
 
-  spec.summary       = %q{Easily organize your rails models in hierarchical structures with PostgreSQL ltree datatype.}
+  spec.summary       = 'Easily organize your rails models in hierarchical structures with PostgreSQL ltree datatype.'
   spec.description   = 'This gem is under development, ' +
                        'please star https://github.com/vladimir-tikhonov/ltree_rails repo ' +
                        'to receive status updates.'
@@ -18,8 +18,6 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = 'exe'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'activerecord', '>= 4.0.0'
