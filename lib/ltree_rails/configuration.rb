@@ -7,7 +7,7 @@ module LtreeRails
     CONFIGURABLE_OPTIONS = {
       parent_column_name: 'parent_id',
       path_column_name: 'path',
-      label_column_name: 'parent_id',
+      label_column_name: 'id',
       children_dependent: :nullify
     }.freeze
 

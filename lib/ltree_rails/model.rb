@@ -13,6 +13,9 @@ module LtreeRails
                dependent: ltree_config.children_dependent,
                class_name: self,
                inverse_of: :parent
+
+      after_create :update_path
+      before_update :assign_path, if: -> { changes[self.class._ltree_parent_column_name].present? }
     end
 
     def root?
@@ -21,6 +24,25 @@ module LtreeRails
 
     def child?
       !root?
+    end
+
+    private
+
+    def assign_path
+      self._ltree_path_column_value = compute_path
+    end
+
+    def update_path
+      update_column(self.class._ltree_path_column_name, compute_path)
+    end
+
+    def compute_path
+      if root?
+        _ltree_label_column_value.to_s
+      else
+        ::LtreeRails::Utils::PathUtils.combine_paths(parent._ltree_path_column_value,
+                                                     _ltree_label_column_value)
+      end
     end
   end
 end
