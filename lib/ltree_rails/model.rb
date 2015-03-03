@@ -15,6 +15,7 @@ module LtreeRails
                inverse_of: :parent
 
       after_create :update_path
+      before_update :assign_path, if: -> { changes[self.class._ltree_parent_column_name].present? }
     end
 
     def root?
@@ -26,6 +27,10 @@ module LtreeRails
     end
 
     private
+
+    def assign_path
+      self._ltree_path_column_value = compute_path
+    end
 
     def update_path
       update_column(self.class._ltree_path_column_name, compute_path)
