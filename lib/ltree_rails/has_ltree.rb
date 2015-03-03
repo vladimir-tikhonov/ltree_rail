@@ -25,7 +25,7 @@ module LtreeRails
 
       def apply_options(opt)
         opt.each do |option, value|
-          ltree_config.public_send("#{option}=", value)
+          ltree_config[option] = value
         end
       end
     end

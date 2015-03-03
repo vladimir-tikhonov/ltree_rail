@@ -2,6 +2,8 @@ module LtreeRails
   class Configuration
     include ActiveSupport::Configurable
 
+    delegate :[], :[]=, to: :config
+
     CONFIGURABLE_OPTIONS = {
       parent_column_name: 'parent_id',
       path_column_name: 'path',
