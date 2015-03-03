@@ -1,3 +1,5 @@
+require_relative 'utils/path_utils'
+
 module LtreeRails
   module Model
     extend ActiveSupport::Concern
@@ -26,6 +28,17 @@ module LtreeRails
       !root?
     end
 
+    def ancestors
+      self_and_ancestors.where.not(self.class._ltree_label_column_name => _ltree_label_column_value)
+    end
+
+    def self_and_ancestors
+      path_column = self.class.arel_table[self.class._ltree_path_column_name]
+      query = Arel::Nodes::Quoted.new(_ltree_path_column_value)
+      expression = Arel::Nodes::InfixOperation.new('@>', path_column, query)
+      self.class.where(expression)
+    end
+
     private
 
     def assign_path
@@ -43,6 +56,10 @@ module LtreeRails
         ::LtreeRails::Utils::PathUtils.combine_paths(parent._ltree_path_column_value,
                                                      _ltree_label_column_value)
       end
+    end
+
+    def fetch_association(name)
+      association_cache[name] ||= yield
     end
   end
 end

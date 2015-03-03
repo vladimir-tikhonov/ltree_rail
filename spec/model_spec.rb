@@ -51,6 +51,7 @@ describe LtreeRails::Model do
       it 'assigns correct value if child' do
         c1 = Category.create!(parent_id: root_category.id)
         c2 = Category.create!(parent_id: c1.id)
+        p c2.self_and_ancestors.to_sql
         expect(c1.path).to eq "#{root_category.id}.#{c1.id}"
         expect(c2.path).to eq "#{root_category.id}.#{c1.id}.#{c2.id}"
       end

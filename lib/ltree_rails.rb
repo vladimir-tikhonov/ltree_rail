@@ -1,5 +1,4 @@
 require 'ltree_rails/version'
-require 'ltree_rails/utils/path_utils'
 require 'active_support'
 
 module LtreeRails
